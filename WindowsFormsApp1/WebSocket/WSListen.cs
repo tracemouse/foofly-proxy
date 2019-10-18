@@ -11,11 +11,10 @@ using WebSocketSharp;
 using WebSocketSharp.Net;
 using WebSocketSharp.Server;
 
-namespace AimpFlyPlugin
+namespace FooflyProxy
 {
     public class WSListen
     {
-        private AimpInterface mbApi;
 
    
         public HttpServer httpsv;
@@ -26,10 +25,9 @@ namespace AimpFlyPlugin
         /// </summary>
         public string corsOptions { get; set; }
 
-        public WSListen(int _port, ref AimpInterface _mbApi)
+        public WSListen(int _port)
         {
             port = _port;
-            this.mbApi = _mbApi;
         }
 
         /// <summary>
@@ -50,8 +48,8 @@ namespace AimpFlyPlugin
             httpsv.OnOptions += Httpsv_OnOptions;
 
             //register websocket
-            httpsv.WebSocketServices.Add("/wsjsonrpc", () => new WSJsonrpc(ref mbApi));
-            httpsv.WebSocketServices.Add("/wsplaying", () => new WSPlaying(ref mbApi));
+            //httpsv.WebSocketServices.Add("/wsjsonrpc", () => new WSJsonrpc(ref mbApi));
+           // httpsv.WebSocketServices.Add("/wsplaying", () => new WSPlaying(ref mbApi));
             //httpsv.AddWebSocketService("/wsjsonrpc", () => new WSJsonrpc(ref mbApi));
             //httpsv.AddWebSocketService("/wsplaying", () => new WSPlaying(ref mbApi));
 

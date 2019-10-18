@@ -1,25 +1,20 @@
-﻿using AIMP.SDK.Player;
+﻿
 using System;
 using System.Threading;
 using System.Windows.Forms;
 using WebSocketSharp;
 using WebSocketSharp.Server;
 
-namespace AimpFlyPlugin
+namespace FooflyProxy
 {
     public class WSJsonrpc : WebSocketBehavior
     {
         private string _password;
 
-        private AimpInterface mbApi;
-        private MBControl mbControl;
-        private readonly IAimpPlayer Player;
 
-        public WSJsonrpc(ref AimpInterface _mbApi)
+        public WSJsonrpc()
         {
-            this.mbApi = _mbApi;
-            this.Player = _mbApi.GetPlayer();
-            mbControl = new MBControl(ref mbApi);
+
         }
 
         protected override void OnOpen()
@@ -50,9 +45,8 @@ namespace AimpFlyPlugin
                 String returnJsonString = testTask.getReturnJsonString();
                 LogUtil.write("wsjsonrpc returnJsonString=" + returnJsonString);
                 */
-                MBService mbService = new MBService(uploadJsonString, ref mbApi);
-                String returnJsonString = mbService.invokeMB();
-                Send(returnJsonString);
+
+
             }catch(Exception ex)
             {
                 //MessageBox.Show("WSJsonrpc:" + ex.Message);

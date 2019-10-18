@@ -1,24 +1,20 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using WebSocketSharp.Net;
 
-namespace AimpFlyPlugin
+namespace FooflyProxy
 {
     public class WSRequestHelper
     {
-        private AimpInterface mbApi;
-
+ 
         private HttpListenerRequest request;
         private HttpListenerResponse response;
         private WSResponseHelper responseHelper;
 
-        public WSRequestHelper(ref HttpListenerRequest request, ref HttpListenerResponse response, ref AimpInterface mbApi)
+        public WSRequestHelper(ref HttpListenerRequest request, ref HttpListenerResponse response)
         {
-            this.mbApi = mbApi;
 
             this.request = request;
             this.response = response;
@@ -78,8 +74,10 @@ namespace AimpFlyPlugin
                 String returnJsonString = "";
                 try
                 {
+                    /*
                     MBService mbService = new MBService(uploadJsonString, ref mbApi);
                     returnJsonString = mbService.invokeMB();
+                    */
                 }catch
                 {
                     responseHelper.ReturnError(500);

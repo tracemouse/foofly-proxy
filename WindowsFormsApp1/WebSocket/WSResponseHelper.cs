@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using WebSocketSharp;
 using WebSocketSharp.Net;
 
-namespace AimpFlyPlugin
+namespace FooflyProxy
 {
     public class WSResponseHelper
     {

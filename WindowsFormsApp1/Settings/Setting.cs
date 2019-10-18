@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -16,13 +11,11 @@ namespace AimpFlyPlugin
 {
     partial class Setting : Form
     {
-        AimpInterface aimpInterface;
 
         Thread httpThread;
 
-        public Setting(ref AimpInterface _aimpInterface)
+        public Setting()
         {
-            this.aimpInterface = _aimpInterface;
 
             InitializeComponent();
             this.Text = String.Format("{0} Settings", AssemblyTitle);
@@ -30,8 +23,8 @@ namespace AimpFlyPlugin
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
 
-            int port = Properties.Settings.Default.port;
-            string password = Properties.Settings.Default.password;
+            int port = FooflyProxy.Properties.Settings.Default.port;
+            string password = FooflyProxy.Properties.Settings.Default.password;
 
             String url = "http://" + this.GetLocalIP() + ":" + port + "/";
             this.lblUrl.Text = url;
@@ -51,19 +44,7 @@ namespace AimpFlyPlugin
             //UIntPtr taskThread;
             //this.aimpInterface.getPlayer().ServiceThreadPool.Execute(testTask, out taskThread);
 
-            var iAimpPlaylist = this.aimpInterface.GetIAimpPlaylist();
-            var count = iAimpPlaylist.GetLoadedPlaylistCount();
-            LogUtil.write("playlist count=" + count);
-            for (var i = 0; i < count; i++)
-            {
-                var result = iAimpPlaylist.GetLoadedPlaylist(i, out var playlist);
-                LogUtil.write("result=" + result);
-                if (playlist != null)
-                {
-                    LogUtil.write(playlist.Id);
-                    LogUtil.write(playlist.Name);
-                }
-            }
+ 
         }
 
 
@@ -140,14 +121,14 @@ namespace AimpFlyPlugin
 
             int port = (int)this.inputPort.Value;
             string password = this.inputPassword.Text;
-            int oldport = Properties.Settings.Default.port;
-            string oldpassword = Properties.Settings.Default.password;
+            int oldport = FooflyProxy.Properties.Settings.Default.port;
+            string oldpassword = FooflyProxy.Properties.Settings.Default.password;
             if (port != oldport || password != oldpassword)
             {
                 //this.RegisterHttp(port);
-                Properties.Settings.Default.port = port;
-                Properties.Settings.Default.password = password;
-                Properties.Settings.Default.Save();
+                FooflyProxy.Properties.Settings.Default.port = port;
+                FooflyProxy.Properties.Settings.Default.password = password;
+                FooflyProxy.Properties.Settings.Default.Save();
             }
             
             Close();

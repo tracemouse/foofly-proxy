@@ -6,12 +6,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{20D7AB0E-142F-498F-8FEC-1DF8B5469569}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsApp1</RootNamespace>
-    <AssemblyName>WindowsFormsApp1</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>FooflyProxy</RootNamespace>
+    <AssemblyName>Foofly-proxy</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,9 +33,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>foofly.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +65,8 @@
     <Compile Include="Settings\Setting.Designer.cs">
       <DependentUpon>Setting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util\FileUtil.cs" />
+    <Compile Include="Util\LogUtil.cs" />
     <Compile Include="websocket-sharp\AssemblyInfo.cs" />
     <Compile Include="websocket-sharp\ByteOrder.cs" />
     <Compile Include="websocket-sharp\CloseEventArgs.cs" />
@@ -140,7 +147,6 @@
     <Compile Include="websocket-sharp\WebSocketState.cs" />
     <Compile Include="WebSocket\WSJsonrpc.cs" />
     <Compile Include="WebSocket\WSListen.cs" />
-    <Compile Include="WebSocket\WSPlaying.cs" />
     <Compile Include="WebSocket\WSRequestHelper.cs" />
     <Compile Include="WebSocket\WSResponseHelper.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -154,6 +160,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Settings\Setting.resx">
       <DependentUpon>Setting.cs</DependentUpon>
@@ -175,6 +182,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="foofly.ico" />
     <Content Include="websocket-sharp\websocket-sharp.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
