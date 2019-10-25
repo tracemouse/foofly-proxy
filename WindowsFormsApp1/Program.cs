@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace FooflyProxy
 {
     static class Program
     {
@@ -14,6 +14,17 @@ namespace WindowsFormsApp1
         [STAThread]
         static void Main()
         {
+            LogUtil.Open();
+
+            string strProcessName = System.Diagnostics.Process.GetCurrentProcess().ProcessName;
+            //LogUtil.write("process name=" + strProcessName);
+            if (System.Diagnostics.Process.GetProcessesByName(strProcessName).Length > 1)
+            {
+                //LogUtil.write("Program is already runing, will exit");
+                Application.Exit();
+                return;
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

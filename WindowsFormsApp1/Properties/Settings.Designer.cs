@@ -25,7 +25,7 @@ namespace FooflyProxy.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("8123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("8889")]
         public int port {
             get {
                 return ((int)(this["port"]));
@@ -56,6 +56,18 @@ namespace FooflyProxy.Properties {
             }
             set {
                 this["password"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8888")]
+        public int httpcontrolPort {
+            get {
+                return ((int)(this["httpcontrolPort"]));
+            }
+            set {
+                this["httpcontrolPort"] = value;
             }
         }
     }

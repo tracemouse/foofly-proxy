@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Windows.Forms;
 
 namespace FooflyProxy
 {
@@ -136,6 +134,29 @@ namespace FooflyProxy
                 throw new Exception("非预期的byte格式");
             }
             return true;
+        }
+
+
+        public static string ByteToHex(byte[] bytes)
+        {
+            var count = bytes.Length;
+            StringBuilder strBuider = new StringBuilder();
+            for (int index = 0; index < count; index++)
+            {
+                strBuider.Append(((int)bytes[index]).ToString("X2"));
+            }
+            return strBuider.ToString();
+        }
+
+        public static byte[] HexToByte(string hexString)
+        {
+            hexString = hexString.Replace(" ", "");
+            if ((hexString.Length % 2) != 0)
+                hexString += " ";
+            byte[] returnBytes = new byte[hexString.Length / 2];
+            for (int i = 0; i < returnBytes.Length; i++)
+                returnBytes[i] = Convert.ToByte(hexString.Substring(i * 2, 2).Trim(), 16);
+            return returnBytes;
         }
     }
 }

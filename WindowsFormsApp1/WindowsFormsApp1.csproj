@@ -65,6 +65,7 @@
     <Compile Include="Settings\Setting.Designer.cs">
       <DependentUpon>Setting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util\CfgUtil.cs" />
     <Compile Include="Util\FileUtil.cs" />
     <Compile Include="Util\LogUtil.cs" />
     <Compile Include="websocket-sharp\AssemblyInfo.cs" />
@@ -145,6 +146,8 @@
     <Compile Include="websocket-sharp\WebSocketException.cs" />
     <Compile Include="websocket-sharp\WebSocketFrame.cs" />
     <Compile Include="websocket-sharp\WebSocketState.cs" />
+    <Compile Include="WebSocket\FooHttpClient.cs" />
+    <Compile Include="WebSocket\PCContorl.cs" />
     <Compile Include="WebSocket\WSJsonrpc.cs" />
     <Compile Include="WebSocket\WSListen.cs" />
     <Compile Include="WebSocket\WSRequestHelper.cs" />

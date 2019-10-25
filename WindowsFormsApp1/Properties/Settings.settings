@@ -3,13 +3,16 @@
   <Profiles />
   <Settings>
     <Setting Name="port" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">8123</Value>
+      <Value Profile="(Default)">8889</Value>
     </Setting>
     <Setting Name="log" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="password" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="httpcontrolPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">8888</Value>
     </Setting>
   </Settings>
 </SettingsFile>
