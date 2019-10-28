@@ -38,13 +38,13 @@ namespace FooflyProxy
         /// </summary>
         public void start()
         {
-
             httpsv = new HttpServer(System.Net.IPAddress.Any, port);
             //httpsv = new HttpServer(System.Net.IPAddress.Any, port,true);
             //httpsv.Log.Level = LogLevel.Trace;
 
             //String wwwPath = string.Format(@"{0}/Plugins/aimp_fly/www", Application.StartupPath);
-            String wwwPath = "D:\\Tools\\Player\\httpcontrol\\foofly";
+            //String wwwPath = "D:\\Tools\\Player\\httpcontrol\\foofly";
+            string wwwPath = Properties.Settings.Default.wwwRoot + @"\foofly";
 
             httpsv.DocumentRootPath = wwwPath;
 

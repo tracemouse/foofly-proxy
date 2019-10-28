@@ -70,5 +70,17 @@ namespace FooflyProxy.Properties {
                 this["httpcontrolPort"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string wwwRoot {
+            get {
+                return ((string)(this["wwwRoot"]));
+            }
+            set {
+                this["wwwRoot"] = value;
+            }
+        }
     }
 }
