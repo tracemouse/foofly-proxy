@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Windows.Forms;
@@ -8,8 +9,9 @@ namespace FooflyProxy
 {
     public class NetUtil
     {
-        public static string GetLocalIP()
+        public static List<string> GetLocalIP()
         {
+            List<string> ipList = new List<string>();
             try
             {
                 string HostName = Dns.GetHostName(); //得到主机名
@@ -21,16 +23,17 @@ namespace FooflyProxy
                     //AddressFamily.InterNetworkV6表示此地址为IPv6类型
                     if (IpEntry.AddressList[i].AddressFamily == AddressFamily.InterNetwork)
                     {
-                        return IpEntry.AddressList[i].ToString();
+                        string ip = IpEntry.AddressList[i].ToString();
+                        ipList.Add(ip);
                     }
                 }
-                return "";
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Failed to get ip address:" + ex.Message);
-                return "";
             }
+
+            return ipList;
         }
 
         /*　　

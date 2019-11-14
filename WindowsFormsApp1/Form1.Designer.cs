@@ -36,9 +36,13 @@
             this.exitxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.okButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUrl = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.inputFoorbar2000 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,10 +53,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.inputPort = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.inputFoorbar2000 = new System.Windows.Forms.TextBox();
+            this.cbUrl = new System.Windows.Forms.ComboBox();
+            this.btnOpen = new System.Windows.Forms.Button();
+            this.lblHelp = new System.Windows.Forms.LinkLabel();
             this.contextMenuStrip1.SuspendLayout();
             this.tableLayoutPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -122,10 +125,30 @@
             this.tableLayoutPanel.Size = new System.Drawing.Size(959, 95);
             this.tableLayoutPanel.TabIndex = 27;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 14.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(188, 40);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Foofly Proxy";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 57);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(307, 21);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Copyright @ tracemouse 2019";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 90);
+            this.label1.Location = new System.Drawing.Point(11, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 21);
             this.label1.TabIndex = 28;
@@ -134,7 +157,7 @@
             // lblUrl
             // 
             this.lblUrl.AutoSize = true;
-            this.lblUrl.Location = new System.Drawing.Point(225, 90);
+            this.lblUrl.Location = new System.Drawing.Point(561, 43);
             this.lblUrl.Name = "lblUrl";
             this.lblUrl.Size = new System.Drawing.Size(76, 21);
             this.lblUrl.TabIndex = 32;
@@ -158,6 +181,26 @@
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Foobar2000";
+            // 
+            // inputFoorbar2000
+            // 
+            this.inputFoorbar2000.Location = new System.Drawing.Point(226, 38);
+            this.inputFoorbar2000.Name = "inputFoorbar2000";
+            this.inputFoorbar2000.ReadOnly = true;
+            this.inputFoorbar2000.Size = new System.Drawing.Size(521, 31);
+            this.inputFoorbar2000.TabIndex = 38;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.Location = new System.Drawing.Point(789, 33);
+            this.button2.Margin = new System.Windows.Forms.Padding(6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(121, 36);
+            this.button2.TabIndex = 37;
+            this.button2.Text = "Run";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -229,13 +272,15 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnOpen);
+            this.groupBox2.Controls.Add(this.cbUrl);
             this.groupBox2.Controls.Add(this.inputPort);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.lblUrl);
             this.groupBox2.Location = new System.Drawing.Point(12, 307);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(935, 132);
+            this.groupBox2.Size = new System.Drawing.Size(935, 147);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Foofly Proxy";
@@ -271,51 +316,43 @@
             this.label5.TabIndex = 28;
             this.label5.Text = "Port：";
             // 
-            // button2
+            // cbUrl
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(789, 33);
-            this.button2.Margin = new System.Windows.Forms.Padding(6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 36);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "Run";
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.cbUrl.FormattingEnabled = true;
+            this.cbUrl.Location = new System.Drawing.Point(229, 91);
+            this.cbUrl.Name = "cbUrl";
+            this.cbUrl.Size = new System.Drawing.Size(521, 29);
+            this.cbUrl.TabIndex = 33;
             // 
-            // label4
+            // btnOpen
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 14.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(188, 40);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Foofly Proxy";
+            this.btnOpen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOpen.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnOpen.Location = new System.Drawing.Point(792, 86);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(121, 37);
+            this.btnOpen.TabIndex = 34;
+            this.btnOpen.Text = "Test";
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
-            // label7
+            // lblHelp
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 57);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(307, 21);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Copyright @ tracemouse 2019";
-            // 
-            // inputFoorbar2000
-            // 
-            this.inputFoorbar2000.Location = new System.Drawing.Point(226, 38);
-            this.inputFoorbar2000.Name = "inputFoorbar2000";
-            this.inputFoorbar2000.ReadOnly = true;
-            this.inputFoorbar2000.Size = new System.Drawing.Size(521, 31);
-            this.inputFoorbar2000.TabIndex = 38;
+            this.lblHelp.AutoSize = true;
+            this.lblHelp.Location = new System.Drawing.Point(23, 471);
+            this.lblHelp.Name = "lblHelp";
+            this.lblHelp.Size = new System.Drawing.Size(54, 21);
+            this.lblHelp.TabIndex = 35;
+            this.lblHelp.TabStop = true;
+            this.lblHelp.Text = "Help";
+            this.lblHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblHelp_LinkClicked);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(959, 516);
+            this.Controls.Add(this.lblHelp);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tableLayoutPanel);
@@ -337,6 +374,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputPort)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -365,6 +403,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox inputFoorbar2000;
+        private System.Windows.Forms.Button btnOpen;
+        private System.Windows.Forms.ComboBox cbUrl;
+        private System.Windows.Forms.LinkLabel lblHelp;
     }
 }
 

@@ -13,8 +13,8 @@ D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\bin\Debug\Foofly-proxy.exe
 D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\bin\Debug\Foofly-proxy.pdb
 D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\FooflyProxy.Form1.resources
 D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\FooflyProxy.Properties.Resources.resources
-D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\AimpFlyPlugin.Setting.resources
 D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
 D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\Foofly-proxy.exe
 D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\Foofly-proxy.pdb
+D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache

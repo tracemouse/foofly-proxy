@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -44,6 +45,8 @@ namespace FooflyProxy
 
         private void InitFormValues()
         {
+            this.Text = this.Text + " - " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
             this.inputFoorbar2000.Text = this.foobar2000exe;
             string wwwRoot = Properties.Settings.Default.wwwRoot;
             if (string.IsNullOrEmpty(wwwRoot))
@@ -60,8 +63,16 @@ namespace FooflyProxy
             this.port = Properties.Settings.Default.port;
             this.inputPort.Value = this.port;
 
-            string url = "http://" + NetUtil.GetLocalIP() + ":" + port + "/";
-            this.lblUrl.Text = url;
+            //string url = "http://" + NetUtil.GetLocalIP() + ":" + port + "/";
+            //this.lblUrl.Text = url;
+
+            List<string> ipList = NetUtil.GetLocalIP();
+            foreach (string ip in ipList)
+            {
+                string url = "http://" + ip + ":" + port + "/";
+                this.cbUrl.Items.Add(url);
+                this.cbUrl.Text = url;
+            }
 
             Properties.Settings.Default.Save();
         }
@@ -227,6 +238,19 @@ namespace FooflyProxy
 
             MessageBox.Show("Done");
 
+        }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            string url = this.cbUrl.Text;
+            if (url.Length > 0)
+                NetUtil.GotoUrl(url);
+        }
+
+        private void lblHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string url = "https://github.com/tracemouse/FooFly";
+            NetUtil.GotoUrl(url);
         }
     }
 }
