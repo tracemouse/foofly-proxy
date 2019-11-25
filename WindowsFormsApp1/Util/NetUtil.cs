@@ -12,6 +12,7 @@ namespace FooflyProxy
         public static List<string> GetLocalIP()
         {
             List<string> ipList = new List<string>();
+            ipList.Add("127.0.0.1");
             try
             {
                 string HostName = Dns.GetHostName(); //得到主机名
