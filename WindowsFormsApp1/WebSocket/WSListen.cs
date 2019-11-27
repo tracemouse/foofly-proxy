@@ -179,7 +179,23 @@ namespace FooflyProxy
                     res.WriteContent(contents);
                     return;
                 }
-                
+                if (path.StartsWith("/getArtwork?"))
+                {
+                    res.ContentType = "image/jpeg";
+
+                    string queryString = req.Url.Query;
+                    NameValueCollection col = GetQueryString(queryString, Encoding.UTF8, true);
+                    string fileUrl = col["fileUrl"];
+                    LogUtil.write("fileUrl=" + fileUrl);
+                    contents = FileUtil.getCoverImg(fileUrl);
+                    if(contents == null)
+                    {
+                        contents = FileUtil.getDefaultCoverImg();
+                    }
+                    res.WriteContent(contents);
+                    return;
+                }
+
                 if (path == "/")
                     path += "index.html";
 

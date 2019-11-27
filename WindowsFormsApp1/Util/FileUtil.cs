@@ -17,6 +17,58 @@ namespace FooflyProxy
             return Path.GetExtension(filename);
         }
 
+        public static byte[] getCoverImg(String fileUrl)
+        {
+            try
+            {
+                String imgFileUrl = Path.GetDirectoryName(fileUrl) + "\\cover.jpg";
+                if(!File.Exists(imgFileUrl)){
+                    imgFileUrl = Path.GetDirectoryName(fileUrl) + "\\folder.jpg";
+                }
+                if (!File.Exists(imgFileUrl))
+                {
+                    return null;
+                }
+                FileStream fs = new FileStream(imgFileUrl, FileMode.Open, FileAccess.Read);
+                byte[] contents = new byte[fs.Length];
+                fs.Read(contents, 0, contents.Length);
+                fs.Seek(0, SeekOrigin.Begin);
+                fs.Close();
+                return contents;
+            }
+            catch (Exception ex)
+            {
+                LogUtil.write(ex.Message);
+                return null;
+            }
+        }
+
+        public static byte[] getDefaultCoverImg()
+        {
+            try
+            {
+                string wwwPath = Properties.Settings.Default.wwwRoot + @"\foofly";
+
+                String imgFileUrl = wwwPath + @"\assets\img\cover.jpg";
+
+                if (!File.Exists(imgFileUrl))
+                {
+                    return null;
+                }
+                FileStream fs = new FileStream(imgFileUrl, FileMode.Open, FileAccess.Read);
+                byte[] contents = new byte[fs.Length];
+                fs.Read(contents, 0, contents.Length);
+                fs.Seek(0, SeekOrigin.Begin);
+                fs.Close();
+                return contents;
+            }
+            catch (Exception ex)
+            {
+                LogUtil.write(ex.Message);
+                return null;
+            }
+        }
+
         public static String getFolder(String filename)
         {
             String path = Path.GetDirectoryName(filename);
