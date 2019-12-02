@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -20,6 +21,8 @@ namespace FooflyProxy
         private int port;
         private PCControl pcControl;
         private FooHttpClient fooHttpClient;
+        private string foobar2000Root = Application.StartupPath;
+        private string foobar2000exe;
 
         /// <summary>
         /// 跨域参数设置
@@ -28,6 +31,7 @@ namespace FooflyProxy
 
         public WSListen(int _port)
         {
+            this.foobar2000exe = this.foobar2000Root + @"\foobar2000.exe";
             port = _port;
             this.pcControl = new PCControl();
             this.fooHttpClient = new FooHttpClient();
@@ -150,6 +154,12 @@ namespace FooflyProxy
                             //result = this.fooHttpClient.HttpGet(req.RawUrl);
                             //contents = result.GetUTF8EncodedBytes();
                             contents = this.fooHttpClient.HttpGetBytes(req.RawUrl);
+                            if(contents == null)
+                            {
+                                this.InitFoobar();
+                                contents = this.fooHttpClient.HttpGetBytes(req.RawUrl);
+                            }
+
                             System.Text.UTF8Encoding utf8 = new UTF8Encoding();
                             //LogUtil.write(utf8.GetString(contents));
                             break;
@@ -324,5 +334,18 @@ namespace FooflyProxy
             return HttpUtility.UrlDecode(str, encoding);
         }
 
+        private void InitFoobar()
+        {
+            try
+            {
+                Process myProcess = new Process();
+                myProcess.StartInfo.FileName = foobar2000exe;
+                myProcess.Start();
+
+            }
+            catch (Exception e)
+            {
+            }
+        }
     }
 }
