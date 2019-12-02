@@ -82,5 +82,17 @@ namespace FooflyProxy.Properties {
                 this["wwwRoot"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool startupWithWindows {
+            get {
+                return ((bool)(this["startupWithWindows"]));
+            }
+            set {
+                this["startupWithWindows"] = value;
+            }
+        }
     }
 }

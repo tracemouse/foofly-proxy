@@ -39,7 +39,7 @@ namespace FooflyProxy
 
             InitializeComponent();
             InitFormValues();
-            InitFoobar();
+            //InitFoobar();
             InitWS();
         }
 
@@ -73,6 +73,8 @@ namespace FooflyProxy
                 this.cbUrl.Items.Add(url);
                 this.cbUrl.Text = url;
             }
+
+            this.cbStartupWithWindows.Checked = Properties.Settings.Default.startupWithWindows;
 
             Properties.Settings.Default.Save();
         }
@@ -234,6 +236,13 @@ namespace FooflyProxy
                 }
             }
 
+            //set startup
+            bool startup = this.cbStartupWithWindows.Checked;
+            Properties.Settings.Default.startupWithWindows = startup;
+            WinUtil winUtil = new WinUtil();
+            winUtil.SetMeAutoStart(startup);
+            winUtil = null;
+
             Properties.Settings.Default.Save();
 
             MessageBox.Show("Done");
@@ -247,7 +256,8 @@ namespace FooflyProxy
                 NetUtil.GotoUrl(url);
         }
 
-        private void lblHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+        private void btnHelp_Click(object sender, EventArgs e)
         {
             string url = "https://github.com/tracemouse/FooFly";
             NetUtil.GotoUrl(url);

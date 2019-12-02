@@ -51,11 +51,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnOpen = new System.Windows.Forms.Button();
+            this.cbUrl = new System.Windows.Forms.ComboBox();
             this.inputPort = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbUrl = new System.Windows.Forms.ComboBox();
-            this.btnOpen = new System.Windows.Forms.Button();
-            this.lblHelp = new System.Windows.Forms.LinkLabel();
+            this.cbStartupWithWindows = new System.Windows.Forms.CheckBox();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.tableLayoutPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -68,7 +69,7 @@
             // 
             this.notifyIcon.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
-            this.notifyIcon.Text = "notifyIcon";
+            this.notifyIcon.Text = "Foofly Proxy";
             this.notifyIcon.Visible = true;
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             // 
@@ -100,7 +101,7 @@
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.okButton.Location = new System.Drawing.Point(804, 463);
+            this.okButton.Location = new System.Drawing.Point(804, 482);
             this.okButton.Margin = new System.Windows.Forms.Padding(6);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(121, 36);
@@ -280,10 +281,30 @@
             this.groupBox2.Controls.Add(this.lblUrl);
             this.groupBox2.Location = new System.Drawing.Point(12, 307);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(935, 147);
+            this.groupBox2.Size = new System.Drawing.Size(935, 151);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Foofly Proxy";
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOpen.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnOpen.Location = new System.Drawing.Point(792, 38);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(121, 37);
+            this.btnOpen.TabIndex = 34;
+            this.btnOpen.Text = "Test";
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
+            // cbUrl
+            // 
+            this.cbUrl.FormattingEnabled = true;
+            this.cbUrl.Location = new System.Drawing.Point(229, 91);
+            this.cbUrl.Name = "cbUrl";
+            this.cbUrl.Size = new System.Drawing.Size(521, 29);
+            this.cbUrl.TabIndex = 33;
             // 
             // inputPort
             // 
@@ -316,43 +337,35 @@
             this.label5.TabIndex = 28;
             this.label5.Text = "Port：";
             // 
-            // cbUrl
+            // cbStartupWithWindows
             // 
-            this.cbUrl.FormattingEnabled = true;
-            this.cbUrl.Location = new System.Drawing.Point(229, 91);
-            this.cbUrl.Name = "cbUrl";
-            this.cbUrl.Size = new System.Drawing.Size(521, 29);
-            this.cbUrl.TabIndex = 33;
+            this.cbStartupWithWindows.AutoSize = true;
+            this.cbStartupWithWindows.Location = new System.Drawing.Point(27, 489);
+            this.cbStartupWithWindows.Name = "cbStartupWithWindows";
+            this.cbStartupWithWindows.Size = new System.Drawing.Size(256, 25);
+            this.cbStartupWithWindows.TabIndex = 35;
+            this.cbStartupWithWindows.Text = "Startup with Windows";
+            this.cbStartupWithWindows.UseVisualStyleBackColor = true;
             // 
-            // btnOpen
+            // btnHelp
             // 
-            this.btnOpen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOpen.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnOpen.Location = new System.Drawing.Point(792, 86);
-            this.btnOpen.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(121, 37);
-            this.btnOpen.TabIndex = 34;
-            this.btnOpen.Text = "Test";
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
-            // 
-            // lblHelp
-            // 
-            this.lblHelp.AutoSize = true;
-            this.lblHelp.Location = new System.Drawing.Point(23, 471);
-            this.lblHelp.Name = "lblHelp";
-            this.lblHelp.Size = new System.Drawing.Size(54, 21);
-            this.lblHelp.TabIndex = 35;
-            this.lblHelp.TabStop = true;
-            this.lblHelp.Text = "Help";
-            this.lblHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblHelp_LinkClicked);
+            this.btnHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHelp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHelp.Location = new System.Drawing.Point(654, 482);
+            this.btnHelp.Margin = new System.Windows.Forms.Padding(6);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(121, 36);
+            this.btnHelp.TabIndex = 36;
+            this.btnHelp.Text = "&Help";
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 516);
-            this.Controls.Add(this.lblHelp);
+            this.ClientSize = new System.Drawing.Size(959, 533);
+            this.Controls.Add(this.btnHelp);
+            this.Controls.Add(this.cbStartupWithWindows);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tableLayoutPanel);
@@ -405,7 +418,8 @@
         private System.Windows.Forms.TextBox inputFoorbar2000;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.ComboBox cbUrl;
-        private System.Windows.Forms.LinkLabel lblHelp;
+        private System.Windows.Forms.CheckBox cbStartupWithWindows;
+        private System.Windows.Forms.Button btnHelp;
     }
 }
 

@@ -18,3 +18,5 @@ D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.cspro
 D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\Foofly-proxy.exe
 D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\Foofly-proxy.pdb
 D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\Interop.IWshRuntimeLibrary.dll
+D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.ResolveComReference.cache
