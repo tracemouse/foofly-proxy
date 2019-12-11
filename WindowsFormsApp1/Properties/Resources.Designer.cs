@@ -59,5 +59,113 @@ namespace FooflyProxy.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   查找类似 Apply 的本地化字符串。
+        /// </summary>
+        internal static string Apply {
+            get {
+                return ResourceManager.GetString("Apply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Browser 的本地化字符串。
+        /// </summary>
+        internal static string Browser {
+            get {
+                return ResourceManager.GetString("Browser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Exit 的本地化字符串。
+        /// </summary>
+        internal static string Exit {
+            get {
+                return ResourceManager.GetString("Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Help 的本地化字符串。
+        /// </summary>
+        internal static string Help {
+            get {
+                return ResourceManager.GetString("Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Httpcontrol Port: 的本地化字符串。
+        /// </summary>
+        internal static string lblHttpcontrolPort {
+            get {
+                return ResourceManager.GetString("lblHttpcontrolPort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Listen On: 的本地化字符串。
+        /// </summary>
+        internal static string lblListenOn {
+            get {
+                return ResourceManager.GetString("lblListenOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Port: 的本地化字符串。
+        /// </summary>
+        internal static string lblPort {
+            get {
+                return ResourceManager.GetString("lblPort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Startup With Windows 的本地化字符串。
+        /// </summary>
+        internal static string lblStartup {
+            get {
+                return ResourceManager.GetString("lblStartup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 WWW Folder: 的本地化字符串。
+        /// </summary>
+        internal static string lblWWWFolder {
+            get {
+                return ResourceManager.GetString("lblWWWFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Run 的本地化字符串。
+        /// </summary>
+        internal static string Run {
+            get {
+                return ResourceManager.GetString("Run", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Setting 的本地化字符串。
+        /// </summary>
+        internal static string Setting {
+            get {
+                return ResourceManager.GetString("Setting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Test 的本地化字符串。
+        /// </summary>
+        internal static string Test {
+            get {
+                return ResourceManager.GetString("Test", resourceCulture);
+            }
+        }
     }
 }

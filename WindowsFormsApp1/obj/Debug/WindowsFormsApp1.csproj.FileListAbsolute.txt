@@ -20,3 +20,13 @@ D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\Foofly-proxy.pdb
 D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
 D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\Interop.IWshRuntimeLibrary.dll
 D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.ResolveComReference.cache
+D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\bin\Debug\en-US\Foofly-proxy.resources.dll
+D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\bin\Debug\zh-CN\Foofly-proxy.resources.dll
+D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\bin\Debug\zh-CHS\Foofly-proxy.resources.dll
+D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\FooflyProxy.Form1.en-US.resources
+D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\FooflyProxy.Form1.zh-CN.resources
+D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\FooflyProxy.Properties.Resources.zh-CHS.resources
+D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\FooflyProxy.Properties.Resources.en-US.resources
+D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\en-US\Foofly-proxy.resources.dll
+D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\zh-CN\Foofly-proxy.resources.dll
+D:\Project\GitHub\foofly-proxy\WindowsFormsApp1\obj\Debug\zh-CHS\Foofly-proxy.resources.dll
