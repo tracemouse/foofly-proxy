@@ -261,7 +261,7 @@ namespace FooflyProxy
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            string url = "https://github.com/tracemouse/FooFly";
+            string url = "github.com/tracemouse/Foofly";
             NetUtil.GotoUrl(url);
         }
     }

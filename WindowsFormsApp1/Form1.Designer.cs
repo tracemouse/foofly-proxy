@@ -67,30 +67,30 @@
             // 
             // notifyIcon
             // 
-            this.notifyIcon.ContextMenuStrip = this.contextMenuStrip1;
             resources.ApplyResources(this.notifyIcon, "notifyIcon");
+            this.notifyIcon.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             // 
             // contextMenuStrip1
             // 
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainWindowToolStripMenuItem,
             this.exitxToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // mainWindowToolStripMenuItem
             // 
-            this.mainWindowToolStripMenuItem.Name = "mainWindowToolStripMenuItem";
             resources.ApplyResources(this.mainWindowToolStripMenuItem, "mainWindowToolStripMenuItem");
+            this.mainWindowToolStripMenuItem.Name = "mainWindowToolStripMenuItem";
             this.mainWindowToolStripMenuItem.Click += new System.EventHandler(this.mainWindowToolStripMenuItem_Click);
             // 
             // exitxToolStripMenuItem
             // 
-            this.exitxToolStripMenuItem.Name = "exitxToolStripMenuItem";
             resources.ApplyResources(this.exitxToolStripMenuItem, "exitxToolStripMenuItem");
+            this.exitxToolStripMenuItem.Name = "exitxToolStripMenuItem";
             this.exitxToolStripMenuItem.Click += new System.EventHandler(this.exitxToolStripMenuItem_Click);
             // 
             // btnOk
@@ -102,8 +102,8 @@
             // 
             // tableLayoutPanel
             // 
-            this.tableLayoutPanel.BackColor = System.Drawing.Color.Cornsilk;
             resources.ApplyResources(this.tableLayoutPanel, "tableLayoutPanel");
+            this.tableLayoutPanel.BackColor = System.Drawing.Color.Cornsilk;
             this.tableLayoutPanel.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.label7, 0, 1);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
@@ -133,6 +133,7 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.inputFoorbar2000);
             this.groupBox1.Controls.Add(this.btnRun);
             this.groupBox1.Controls.Add(this.btnBrowser);
@@ -141,7 +142,6 @@
             this.groupBox1.Controls.Add(this.inputWWW);
             this.groupBox1.Controls.Add(this.inputHttpControlPort);
             this.groupBox1.Controls.Add(this.lblHttpcontrolPort);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -205,15 +205,19 @@
             resources.ApplyResources(this.lblHttpcontrolPort, "lblHttpcontrolPort");
             this.lblHttpcontrolPort.Name = "lblHttpcontrolPort";
             // 
+            // folderBrowserDialog1
+            // 
+            resources.ApplyResources(this.folderBrowserDialog1, "folderBrowserDialog1");
+            // 
             // groupBox2
             // 
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.btnTest);
             this.groupBox2.Controls.Add(this.cbUrl);
             this.groupBox2.Controls.Add(this.inputPort);
             this.groupBox2.Controls.Add(this.lblPort);
             this.groupBox2.Controls.Add(this.lblListenOn);
             this.groupBox2.Controls.Add(this.lblUrl);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
@@ -226,8 +230,8 @@
             // 
             // cbUrl
             // 
-            this.cbUrl.FormattingEnabled = true;
             resources.ApplyResources(this.cbUrl, "cbUrl");
+            this.cbUrl.FormattingEnabled = true;
             this.cbUrl.Name = "cbUrl";
             // 
             // inputPort
